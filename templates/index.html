@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Online shop</title>
+{% endblock %}
+
+{% block body %}
+<h1 class="container">Online shop</h1>
+{% if count == 0 %}
+<h1 class="container">It isn`t items</h1>
+{% endif %}
+{% if count >= 1 %}
+
+{% for item in data %}
+<div class="div_item">
+  <div class="span_item_name"><div class="position_for_item_name">{{ item[1] }}</div></div>
+  <div class="span_item_text"><div class="position_for_item_text">{{ item[2] }}</div></div>
+</div>
+{% endfor %}
+
+{% endif %}
+<!-- {{ data }} -->
+{% endblock %}
