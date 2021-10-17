@@ -35,6 +35,7 @@ def create_table_item():
 def add_item(title, price, isActive = True):
     try:
         conn, cur = open_db()
+        create_table_item()
         cur.execute('SELECT id FROM item;')
         all_id = cur.fetchall()
         print(all_id)
@@ -52,6 +53,7 @@ def add_item(title, price, isActive = True):
 def show_item_table():
     try:
         conn, cur = open_db()
+        create_table_item()
         cur.execute('''SELECT * FROM item;''')
         items = cur.fetchall()
         result = ''
