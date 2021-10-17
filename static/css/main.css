@@ -20,11 +20,22 @@ body{
     margin-right: 0.5em;
 }
 
+.sign_up{
+    background-color: rgb(174, 251, 97);
+    height: 1.5em;
+}
+
 .span_link{
     padding: 0.7em;
     display: flex;
     justify-content: right;
+    list-style-type: none;
 }
+
+.menu__item{
+    display: flex;
+}
+
 
 
 h1{
