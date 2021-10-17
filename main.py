@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import psycopg2
+import psycopg2, os
 from werkzeug.utils import redirect
 from config import host, user, password, db_name
 
@@ -110,4 +110,4 @@ def show():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
