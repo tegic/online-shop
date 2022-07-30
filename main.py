@@ -51,20 +51,20 @@ def add_item(title, price, isActive = True):
 
 
 def show_item_table():
-    try:
-        conn, cur = open_db()
-        create_table_item()
-        cur.execute('''SELECT * FROM item;''')
-        items = cur.fetchall()
-        result = ''
-        print(items)
-        for i in range(len(items)):
-            result += str(items[i][0]) + ' ' + items[i][1] + ' ' + str(items[i][2]) + ' ' + str(items[i][3]) + '||'
-        return items
-    except:
-        return 'Can`t show item table'
-    finally:
-        close_db(conn, cur)
+    # try:
+    conn, cur = open_db()
+    create_table_item()
+    cur.execute('''SELECT * FROM item;''')
+    items = cur.fetchall()
+    result = ''
+    print(items)
+    for i in range(len(items)):
+        result += str(items[i][0]) + ' ' + items[i][1] + ' ' + str(items[i][2]) + ' ' + str(items[i][3]) + '||'
+    return items
+    close_db(conn, cur)
+    # except:
+    #     return 'Can`t show item table'
+    # finally:
 
 
 
